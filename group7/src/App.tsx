@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import "./styles/App.css";
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <Navbar />
+
       <div className="content-container">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,6 +27,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
+
+      <Footer />
     </>
   );
 }
