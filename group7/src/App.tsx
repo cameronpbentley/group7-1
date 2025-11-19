@@ -12,6 +12,7 @@ import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
 
 import FilmDetails from "./pages/FilmDetails";
+import FriendDetails from "./pages/FriendDetails";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/films" element={<Films />} />
           <Route path="/films/:id" element={<FilmDetails />} />
           <Route path="/friends" element={<Friends />} />
+          <Route path="/friends/:id" element={<FriendDetails />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
