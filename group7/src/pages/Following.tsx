@@ -1,26 +1,24 @@
-import { Link } from "react-router-dom";
 import usersDB from "../data/users.json";
+import { Link } from "react-router-dom";
 
 export default function Following() {
-  const currentUser = usersDB.UsersDB[0];
-
-  const followingList = usersDB.UsersDB.filter(
-    (user) => user.id !== currentUser.id
-  );
+  const user = usersDB.UsersDB[0];
+  const following = user.following ?? [];
 
   return (
-    <section>
-      <h1>Following</h1>
+    <section className="p-4 space-y-6">
+      <h1 className="text-2xl font-bold">Following</h1>
 
-      <ul>
-        {followingList.map((user) => (
-          <li key={user.id}>
-            <Link to={`/friends/${user.id}`}>{user.username}</Link>
+      <ul className="space-y-3">
+        {following.map((person: any) => (
+          <li key={person.id} className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-gray-300" />
+            <Link to={`/friends/${person.id}`} className="hover:underline">
+              {person.name}
+            </Link>
           </li>
         ))}
       </ul>
-
-      <Link to="/profile">Back to Profile</Link>
     </section>
   );
 }

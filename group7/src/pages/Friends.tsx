@@ -1,131 +1,67 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { SearchBar } from "../components/SearchBar.tsx";
-import { FriendList } from "../components/FriendList.tsx";
 import usersDB from "../data/users.json";
-
-type FriendsTab = "friends" | "requests" | "following";
-
-interface FollowingUser {
-  id: number;
-  username: string;
-  memberSince: string;
-  followers: number;
-  following: number;
-}
 
 export default function Friends() {
   const [searchParams] = useSearchParams();
+  const defaultTab = searchParams.get("tab") ?? "friends";
 
-  const tabFromUrl = searchParams.get("tab");
-  const initialTab: FriendsTab =
-    tabFromUrl === "friends" ||
-    tabFromUrl === "requests" ||
-    tabFromUrl === "following"
-      ? tabFromUrl
-      : "friends";
+  const [tab, setTab] = useState(defaultTab);
 
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeTab, setActiveTab] = useState<FriendsTab>(initialTab);
+  const user = usersDB.UsersDB[0];
 
-  const filteredUsers = usersDB.UsersDB.filter((user) =>
-    user.username.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const friends = user.friends ?? [];
+  const followers = user.followers ?? [];
+  const following = user.following ?? [];
 
-  const handleFriendClick = (user: {
-    id: number;
-    username: string;
-    email: string;
-  }) => {
-    console.log("Friend clicked:", user);
+  const getList = () => {
+    if (tab === "followers") return followers;
+    if (tab === "following") return following;
+    return friends;
   };
 
-  const followingUsers: FollowingUser[] = usersDB.UsersDB.map((user, index) => ({
-    id: user.id,
-    username: user.username,
-    memberSince: index === 0 ? "2023-01-15" : "2024-03-22",
-    followers: index === 0 ? 223 : 864,
-    following: index === 0 ? 34 : 68,
-  }));
-
-  const filteredFollowingUsers = followingUsers.filter((user) =>
-    user.username.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const list = getList();
 
   return (
-    <>
-      <h1>Friends</h1>
+    <section className="p-4 space-y-6">
+      <h1 className="text-2xl font-bold">Connections</h1>
 
-      <SearchBar onSearch={setSearchQuery} placeholder="Search for People" />
-
-      
-      <div className="friends-tabs">
+      {/* Tabs */}
+      <div className="flex gap-4 text-sm">
         <button
-          type="button"
-          className={activeTab === "friends" ? "tab tab-active" : "tab"}
-          onClick={() => setActiveTab("friends")}
+          className={tab === "friends" ? "underline font-semibold" : ""}
+          onClick={() => setTab("friends")}
         >
           Friends
         </button>
+
         <button
-          type="button"
-          className={activeTab === "requests" ? "tab tab-active" : "tab"}
-          onClick={() => setActiveTab("requests")}
+          className={tab === "followers" ? "underline font-semibold" : ""}
+          onClick={() => setTab("followers")}
         >
-          Requests
+          Followers
         </button>
+
         <button
-          type="button"
-          className={activeTab === "following" ? "tab tab-active" : "tab"}
-          onClick={() => setActiveTab("following")}
+          className={tab === "following" ? "underline font-semibold" : ""}
+          onClick={() => setTab("following")}
         >
           Following
         </button>
       </div>
 
-    
-      {activeTab === "friends" && (
-        <FriendList users={filteredUsers} onFriendClick={handleFriendClick} />
-      )}
+      {/* List */}
+      <ul className="space-y-3">
+        {list.map((person: any) => (
+          <li key={person.id} className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-gray-300" />
 
-      {activeTab === "requests" && <p>No friend requests right now.</p>}
-
-      {activeTab === "following" && (
-        <div className="following-list">
-          {filteredFollowingUsers.map((user) => (
-            <div key={user.id} className="following-item">
-              <div className="following-main">
-                <Link to={`/friends/${user.id}`}>
-                  <div className="following-avatar" aria-hidden="true" />
-                </Link>
-
-                <div className="following-text">
-                  <Link
-                    to={`/friends/${user.id}`}
-                    className="following-username"
-                  >
-                    @{user.username}
-                  </Link>
-                  <p className="following-member-since">
-                    Member Since: {user.memberSince}
-                  </p>
-                </div>
-              </div>
-
-              <div className="following-stats">
-                <div className="stat-box">
-                  <p className="stat-label">Followers</p>
-                  <p className="stat-value">{user.followers}</p>
-                </div>
-                <div className="stat-box">
-                  <p className="stat-label">Following</p>
-                  <p className="stat-value">{user.following}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-    </>
+            <Link to={`/friends/${person.id}`} className="hover:underline">
+              {person.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
