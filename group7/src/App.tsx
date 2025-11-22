@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import "./styles/App.css";
 
@@ -13,21 +14,29 @@ import Testing from "./pages/Testing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
+import FilmDetails from "./pages/FilmDetails";
+import FriendDetails from "./pages/FriendDetails";
+
 function App() {
   return (
     <>
       <Navbar />
-      <div className="mx-auto p-4 md:w-[1000px]">
+
+      <div className="content-container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/films" element={<Films />} />
+          <Route path="/films/:id" element={<FilmDetails />} />
           <Route path="/friends" element={<Friends />} />
+          <Route path="/friends/:id" element={<FriendDetails />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/testing" element={<Testing />} />
         </Routes>
       </div>
+
+      <Footer />
     </>
   );
 }
