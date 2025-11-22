@@ -10,6 +10,9 @@ import Home from "./pages/Home";
 import Films from "./pages/Films";
 import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
+import Testing from "./pages/Testing";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 import FilmDetails from "./pages/FilmDetails";
 import FriendDetails from "./pages/FriendDetails";
@@ -27,6 +30,9 @@ function App() {
           <Route path="/friends" element={<Friends />} />
           <Route path="/friends/:id" element={<FriendDetails />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/testing" element={<Testing />} />
         </Routes>
       </div>
 
