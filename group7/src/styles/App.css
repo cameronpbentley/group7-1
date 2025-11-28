@@ -1,7 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@custom-variant dark (&:is(.dark *));
 /* varialbes */
+
+@theme {
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
 
 :root {
   --primary-color: #40bcf4;
@@ -102,9 +110,7 @@ h1 {
   height: 100%;
   display: flex;
   align-items: center;
-  transition:
-    background-color 0.18s ease,
-    transform 0.12s ease;
+  transition: background-color 0.18s ease, transform 0.12s ease;
 }
 
 .nav ul li a {
@@ -197,4 +203,13 @@ h1 {
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
