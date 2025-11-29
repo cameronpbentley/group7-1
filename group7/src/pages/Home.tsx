@@ -1,6 +1,9 @@
 // Home.tsx - Enhanced Letterboxd-style home with improved responsive layout
 // Assumes shared CSS (updated below)
 
+import React from "react";
+import { Link } from "react-router-dom"; // Import for navigation
+
 export default function Home() {
   return (
     <div className="home-container">
@@ -13,9 +16,9 @@ export default function Home() {
             <button className="btn-primary" aria-label="Log a new film">
               <span>Log a Film</span>
             </button>
-            <button className="btn-outline" aria-label="Explore trending films">
+            <Link to="/films" className="btn-outline no-underline inline-block" style={{ textDecoration: 'none' }} aria-label="Explore trending films"> {/* Inline style to force no underline */}
               <span>Explore Now</span>
-            </button>
+            </Link>
           </div>
         </div>
         <div className="hero-visual" aria-hidden="true">
