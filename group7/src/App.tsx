@@ -5,14 +5,19 @@ import "./styles/App.css";
 
 import { Route, Routes } from "react-router-dom";
 
-// page imports
+// Existing page imports
 import Home from "./pages/Home";
 import Films from "./pages/Films";
-import Friends from "./pages/Friends";
-import Profile from "./pages/Profile";
-
 import FilmDetails from "./pages/FilmDetails";
+import Friends from "./pages/Friends";
 import FriendDetails from "./pages/FriendDetails";
+import Profile from "./pages/Profile";
+import Testing from "./pages/Testing";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
+// Optional standalone Following page (if you still want it)
+import Following from "./pages/Following";
 
 function App() {
   return (
@@ -21,12 +26,25 @@ function App() {
 
       <div className="content-container">
         <Routes>
+          {/* Core App Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/films" element={<Films />} />
           <Route path="/films/:id" element={<FilmDetails />} />
+
+          {/* Your Pages */}
           <Route path="/friends" element={<Friends />} />
           <Route path="/friends/:id" element={<FriendDetails />} />
           <Route path="/profile" element={<Profile />} />
+
+          {/* Optional individual following page */}
+          <Route path="/following" element={<Following />} />
+
+          {/* Account Pages */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
+          {/* Extra Testing Page */}
+          <Route path="/testing" element={<Testing />} />
         </Routes>
       </div>
 
