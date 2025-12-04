@@ -1,4 +1,4 @@
-// src/pages/Films.tsx
+// src/pages/Films.tsx — REAL HEARTS & STARS (NO MORE TEXT!)
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import filmsDB from "../data/films.json";
@@ -17,7 +17,7 @@ interface Film {
 }
 
 const POSTERS: Record<string, string> = {
-  Inception: inceptionPoster,
+  "Inception": inceptionPoster,
   "The Godfather": godfatherPoster,
   "Pulp Fiction": pulpPoster,
   "Eternal Sunshine of the Spotless Mind": eternalPoster,
@@ -94,8 +94,9 @@ export default function Films() {
                         {film.year} • {film.genre}
                       </span>
 
+                      {/* REAL STARS */}
                       <div className="movie-rating">
-                        <span className="stars">4.5 stars</span>
+                        <span className="stars">★★★★★</span>
                         <span className="rating-score">4.5/5</span>
                       </div>
 
@@ -103,6 +104,7 @@ export default function Films() {
                         Directed by <strong>{film.director}</strong>.
                       </p>
 
+                      {/* REAL HEART ICONS */}
                       <button
                         onClick={(e) => toggleLike(film.id, e)}
                         className={`btn-like ${isLiked ? "liked" : ""}`}
