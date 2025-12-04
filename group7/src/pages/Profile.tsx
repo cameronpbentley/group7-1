@@ -184,12 +184,11 @@ export default function Profile() {
         <section className="activity-section">
           <div className="section-header">
             <h2 className="section-title">Recent Activity</h2>
-            <FilmLogs></FilmLogs>
             <button className="btn-link">View All</button>
           </div>
 
-          <div className="activity-feed">
-            {/* Activity items... (unchanged for brevity) */}
+          <div className="w-full overflow-x-auto">
+            <FilmLogs />
           </div>
         </section>
 

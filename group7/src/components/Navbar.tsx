@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "../styles/App.css";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -17,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="relative bg-[#1b1b1b] text-[#f4f4f4]">
       {/* Container for the navbar */}
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between p-2 px-6">
         {/* Left-aligned MovieApp Title */}
         <NavLink to="/" className="text-3xl font-semibold no-underline">
           MovieApp

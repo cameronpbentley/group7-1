@@ -46,7 +46,7 @@
       "director": "David Fincher",
       "year": 1999,
       "genre": "Drama",
-      "poster": "fightclub.jpg"
+      "poster": "fight_club.jpg"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "director": "The Wachowskis",
       "year": 1999,
       "genre": "Science Fiction",
-      "poster": "matrix.jpg"
+      "poster": "matrix.png"
     },
     {
       "id": 8,
@@ -78,7 +78,7 @@
       "director": "David Fincher",
       "year": 2010,
       "genre": "Drama",
-      "poster": "tsn.jpg"
+      "poster": "tsn.png"
     },
     {
       "id": 11,
@@ -94,7 +94,7 @@
       "director": "Damien Chazelle",
       "year": 2016,
       "genre": "Musical",
-      "poster": "lalaland.jpg"
+      "poster": "lalaland.png"
     },
     {
       "id": 13,
