@@ -1,4 +1,3 @@
-// src/pages/Films.tsx — NOW MATCHES HOME PAGE STYLE PERFECTLY
 // src/pages/Films.tsx
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -32,6 +31,7 @@ export default function Films() {
     e.preventDefault();
     e.stopPropagation();
     setLikedFilms((prev) =>
+      prev.includes(id) ? prev.filter((f) => f !== id) : [...prev, id]
       prev.includes(id) ? prev.filter((f) => f !== id) : [...prev, id],
     );
   };
@@ -66,6 +66,14 @@ export default function Films() {
 
       <div className="h-12 md:h-16" />
 
+      {/* MOVIE GRID */}
+      <section className="max-w-7xl mx-auto px-6 pb-32">
+        {filteredFilms.length === 0 ? (
+          <div className="text-center py-32">
+            <p className="text-3xl font-medium text-gray-700">
+              No films found for "{searchQuery}"
+            </p>
+            <p className="mt-4 text-lg text-gray-500">Try searching something else!</p>
       {/* MOVIE GRID — EXACT SAME STYLE AS HOME PAG */}
       <section className="mx-auto max-w-7xl px-6 pb-32">
         {filteredFilms.length === 0 ? (
@@ -102,11 +110,12 @@ export default function Films() {
                       </span>
 
                       <div className="movie-rating">
-                        <span className="stars">★★★★½</span>
+                        <span className="stars">4.5 stars</span>
                         <span className="rating-score">4.5/5</span>
                       </div>
 
                       <p className="review-snippet">
+                        Directed by <strong>{film.director}</strong>.
                         Directed by <strong>{film.director}</strong>. A
                         masterpiece in {film.genre.toLowerCase()}.
                       </p>
@@ -116,7 +125,7 @@ export default function Films() {
                         className={`btn-like ${isLiked ? "liked" : ""}`}
                         aria-label={isLiked ? "Unlike" : "Like"}
                       >
-                        {isLiked ? "❤️" : "♡"}
+                        {isLiked ? "Red Heart" : "Empty Heart"}
                       </button>
                     </div>
                   </article>
