@@ -1,4 +1,4 @@
-// src/pages/Films.tsx — NOW MATCHES HOME PAGE STYLE PERFECTLY
+// src/pages/Films.tsx — FIXED & WORKING PERFECTLY
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import filmsDB from "../data/films.json";
@@ -64,7 +64,7 @@ export default function Films() {
 
       <div className="h-12 md:h-16" />
 
-      {/* MOVIE GRID — EXACT SAME STYLE AS HOME PAG */}
+      {/* MOVIE GRID */}
       <section className="max-w-7xl mx-auto px-6 pb-32">
         {filteredFilms.length === 0 ? (
           <div className="text-center py-32">
@@ -91,7 +91,7 @@ export default function Films() {
                       <span className="movie-badge">{film.year} • {film.genre}</span>
 
                       <div className="movie-rating">
-                        <span className="stars">★★★★½</span>
+                        <span className="stars">4.5 stars</span>
                         <span className="rating-score">4.5/5</span>
                       </div>
 
@@ -104,7 +104,7 @@ export default function Films() {
                         className={`btn-like ${isLiked ? "liked" : ""}`}
                         aria-label={isLiked ? "Unlike" : "Like"}
                       >
-                        {isLiked ? "❤️" : "♡"}
+                        {isLiked ? "Red Heart" : "Empty Heart"}
                       </button>
                     </div>
                   </article>
