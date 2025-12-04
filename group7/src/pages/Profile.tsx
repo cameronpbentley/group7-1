@@ -33,7 +33,9 @@ export default function Profile() {
               loading="lazy"
             />
             <div className="user-info">
-              <h1 className="user-name">Terry Lewis</h1>
+              <h1 className="hero-title" style={{ color: '#000' }}>
+  Terry Lewis
+</h1>
               <p className="user-bio">
                 Cinephile, indie film enthusiast, and occasional director.
                 "Films are my escape hatch from reality."
