@@ -12,6 +12,7 @@ const navLinks = [
 export default function Navbar() {
   return (
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <nav className="relative bg-[#1b1b1b] text-[#f4f4f4]">
       {/* Container for the navbar */}
       <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -39,6 +40,18 @@ export default function Navbar() {
         {/* Menu - perfectly centered */}
         <ul className="navbar-menu">
           {navLinks.map(({ to, label }) => (
+=======
+    <nav className="navbar">
+      <div className="navbar-container">
+        {/* Logo - left with padding */}
+        <NavLink to="/" className="navbar-logo">
+          MovieApp
+        </NavLink>
+
+        {/* Menu - perfectly centered */}
+        <ul className="navbar-menu">
+          {navLinks.map(({ to, label }) => (
+>>>>>>> Stashed changes
             <li key={to}>
               <NavLink
                 to={to}

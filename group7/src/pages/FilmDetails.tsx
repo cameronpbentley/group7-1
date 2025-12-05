@@ -34,6 +34,7 @@ export default function FilmDetails() {
   }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   // Real film-themed Unsplash images
   const getPosterUrl = (film: Film) => {
     switch (film.title) {
@@ -46,12 +47,17 @@ export default function FilmDetails() {
       default:
         return "https://images.unsplash.com/photo-1489599501215-4b4ca2e8f83d?w=400&h=600&fit=crop&crop=center";
 =======
+=======
+>>>>>>> Stashed changes
   const getImageUrl = (filename: string | undefined) => {
     if (!filename) return "https://via.placeholder.com/500x750?text=No+Image";
     try {
       return new URL(`../assets/${filename}`, import.meta.url).href;
     } catch {
       return "https://via.placeholder.com/500x750?text=No+Image";
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
   };
@@ -106,6 +112,7 @@ export default function FilmDetails() {
       </div>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       {/* Hero Section - Full Bleed with Container */}
       <header className="from-primary-color/10 to-white-color relative flex min-h-[70vh] items-center overflow-hidden bg-linear-to-br">
         <div className="absolute inset-0">
@@ -152,6 +159,21 @@ export default function FilmDetails() {
           <img src={poster} className="HeroBgImg" />
           <div className="HeroOverlay" />
         </div>
+=======
+      {/* HERO SECTION */}
+      <header
+        className="FilmDetailsHero"
+        style={{
+          background: dominantColor
+            ? `linear-gradient(to bottom, rgba(0,0,0,0.8), ${dominantColor}88)`
+            : undefined,
+        }}
+      >
+        <div className="HeroBg">
+          <img src={poster} className="HeroBgImg" />
+          <div className="HeroOverlay" />
+        </div>
+>>>>>>> Stashed changes
 
         <div className="HeroContent">
           <img src={poster} className="HeroPoster" />
@@ -163,6 +185,9 @@ export default function FilmDetails() {
               <span>{film.year}</span>
               <span>{film.genre}</span>
               <span>Directed by <strong>{film.director}</strong></span>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             </div>
 
@@ -184,7 +209,11 @@ export default function FilmDetails() {
                 }}
               >
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 Log This Film
+=======
+                ★ Rate / Review
+>>>>>>> Stashed changes
 =======
                 ★ Rate / Review
 >>>>>>> Stashed changes

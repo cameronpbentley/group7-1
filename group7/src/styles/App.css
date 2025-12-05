@@ -96,6 +96,10 @@ body {
 
 /* Navigation - Fixed height, proper spacing, branded CineLog */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+/* Navigation - Fixed height, proper spacing, branded CineLog */
+>>>>>>> Stashed changes
 =======
 /* Navigation - Fixed height, proper spacing, branded CineLog */
 >>>>>>> Stashed changes
@@ -107,6 +111,10 @@ body {
   right: 0;
   height: 70px;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  height: 70px;
+>>>>>>> Stashed changes
   background-color: rgba(27, 27, 27, 0.98);
   backdrop-filter: blur(20px) saturate(180%);
   color: white;
@@ -114,6 +122,17 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 2.5rem;
+<<<<<<< Updated upstream
+=======
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: rgba(27, 27, 27, 0.98);
+  backdrop-filter: blur(20px) saturate(180%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+>>>>>>> Stashed changes
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 =======
   height: 70px;
@@ -154,7 +173,10 @@ body {
 .nav-title::before {
   content: "CineLog";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   font-size: 1.875rem;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -164,6 +186,9 @@ body {
 /* Change app name to CineLog */
 .nav-title::before {
   content: "CineLog";
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
@@ -214,6 +239,7 @@ body {
 .nav ul {
   display: flex;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   gap: 0;
   margin: 0;
   padding: 0;
@@ -221,6 +247,10 @@ body {
 
 .nav ul li {
   position: relative;
+=======
+  gap: 2.5rem;
+  list-style: none;
+>>>>>>> Stashed changes
 =======
   gap: 2.5rem;
   list-style: none;
@@ -276,6 +306,7 @@ body {
   right: 0;
   height: 4px;
   background: linear-gradient(90deg, var(--primary-color), transparent);
+<<<<<<< Updated upstream
 }
 
 .hero-content,
@@ -377,6 +408,40 @@ body {
 }
 
 =======
+>>>>>>> Stashed changes
+=======
+}
+
+.hero-content,
+.user-avatar-section {
+  flex: 1;
+}
+
+.hero-title,
+.user-name {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.hero-subtitle,
+.user-bio {
+  font-size: 1.25rem;
+  margin-bottom: 1.75rem;
+  color: var(--gray);
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.hero-buttons,
+.profile-buttons {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
 >>>>>>> Stashed changes
 .btn-primary,
 .btn-outline {
@@ -815,6 +880,7 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
 =======
 >>>>>>> Stashed changes
@@ -822,6 +888,14 @@ body {
 .movie-card:hover .btn-like {
   opacity: 1;
   transform: scale(1);
+=======
+
+/* ============================================
+   ACTIVITY SECTION
+   ============================================ */
+.activity-section {
+  margin-bottom: 3rem;
+>>>>>>> Stashed changes
 }
 
 /* Activity Feed - Refined List with Depth */
@@ -1121,6 +1195,7 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .movie-card {
   background: white;
   border-radius: 1.5rem;
@@ -1212,6 +1287,8 @@ body {
   color: #ef4444;
 }
 =======
+=======
+>>>>>>> Stashed changes
 .navbar {
   background-color: #1b1b1b;
   border-bottom: 1px solid #333;
@@ -1289,4 +1366,7 @@ body {
   .navbar-mobile { display: none; }
 }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
