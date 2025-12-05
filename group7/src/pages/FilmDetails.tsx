@@ -116,7 +116,6 @@ export default function FilmDetails() {
               <span>{film.year}</span>
               <span>{film.genre}</span>
               <span>Directed by <strong>{film.director}</strong></span>
-
             </div>
 
             <p className="HeroDescription">

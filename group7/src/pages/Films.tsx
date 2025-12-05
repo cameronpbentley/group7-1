@@ -3,6 +3,11 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import filmsDB from "../data/films.json";
 
+import inceptionPoster from "../assets/MOVEB46211__19379.jpg";
+import eternalPoster   from "../assets/s-l1200.jpg";
+import godfatherPoster from "../assets/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_.jpg";
+import pulpPoster      from "../assets/71iQzfnYGeL.jpg";
+
 interface Film {
   id: number;
   title: string;
@@ -13,16 +18,11 @@ interface Film {
   poster?: string;
 }
 
-// loading the films from the filmDB
-const getImageUrl = (filename: string | undefined) => {
-  if (!filename) {
-    return "https://via.placeholder.com/300x450.png?text=No+Image";
-  }
-  try {
-    return new URL(`../assets/${filename}`, import.meta.url).href;
-  } catch {
-    return "https://via.placeholder.com/300x450.png?text=No+Image";
-  }
+const POSTERS: Record<string, string> = {
+  "Inception": inceptionPoster,
+  "The Godfather": godfatherPoster,
+  "Pulp Fiction": pulpPoster,
+  "Eternal Sunshine of the Spotless Mind": eternalPoster,
 };
 
 export default function Films() {
@@ -99,8 +99,8 @@ export default function Films() {
   const toggleLike = (id: number, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setLikedFilms((prev) =>
-      prev.includes(id) ? prev.filter((f) => f !== id) : [...prev, id],
+    setLikedFilms(prev =>
+      prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id]
     );
   };
 
@@ -138,16 +138,12 @@ export default function Films() {
 
       <div className="h-12 md:h-16" />
 
-      {/* MOVIE GRID */}
-      <section className="mx-auto max-w-7xl px-6 pb-32">
+      {/* MOVIE GRID — EXACT SAME STYLE AS HOME PAGE */}
+      <section className="max-w-7xl mx-auto px-6 pb-32">
         {filteredFilms.length === 0 ? (
-          <div className="py-32 text-center">
-            <p className="text-3xl font-medium text-gray-700">
-              No films found for "{searchQuery}"
-            </p>
-            <p className="mt-4 text-lg text-gray-500">
-              Try searching something else!
-            </p>
+          <div className="text-center py-32">
+            <p className="text-3xl font-medium text-gray-700">No films found for "{searchQuery}"</p>
+            <p className="mt-4 text-lg text-gray-500">Try searching something else!</p>
           </div>
         ) : (
           <div className="movies-grid">
@@ -158,7 +154,7 @@ export default function Films() {
                 <Link key={film.id} to={`/films/${film.id}`} className="block">
                   <article className="movie-card group">
                     <img
-                      src={getImageUrl(film.poster)}
+                      src={POSTERS[film.title] || "https://via.placeholder.com/300x450.png?text=No+Image"}
                       alt={film.title}
                       className="movie-poster"
                       loading="lazy"
@@ -166,13 +162,11 @@ export default function Films() {
 
                     <div className="movie-content">
                       <h3 className="movie-title">{film.title}</h3>
-                      <span className="movie-badge">
-                        {film.year} • {film.genre}
-                      </span>
+                      <span className="movie-badge">{film.year} • {film.genre}</span>
 
                       {/* REAL STARS */}
                       <div className="movie-rating">
-                        <span className="stars">★★★★★</span>
+                        <span className="stars">★★★★½</span>
                         <span className="rating-score">4.5/5</span>
                       </div>
 
@@ -187,7 +181,7 @@ export default function Films() {
                         className={`btn-like ${isLiked ? "liked" : ""}`}
                         aria-label={isLiked ? "Unlike" : "Like"}
                       >
-                        {isLiked ? "Red Heart" : "Empty Heart"}
+                        {isLiked ? "❤️" : "♡"}
                       </button>
                     </div>
                   </article>
