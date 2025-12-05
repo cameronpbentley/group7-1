@@ -19,6 +19,9 @@ export default function Profile() {
     { id: 5, name: "Ricky" },
   ];
 
+  // ←←← ONLY THIS URL WAS CHANGED (and the two img src below) ←←←
+  const profilePicUrl = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80";
+
   return (
     <>
       {/* ------------------ ORIGINAL PROFILE LAYOUT ------------------ */}
@@ -27,7 +30,7 @@ export default function Profile() {
         <header className="profile-header">
           <div className="user-avatar-section">
             <img
-              src="https://via.placeholder.com/150x150/6c5ce7/ffffff?text=CP"
+              src={profilePicUrl}
               alt="Cameron Bentley Avatar"
               className="user-avatar"
               loading="lazy"
@@ -204,7 +207,12 @@ export default function Profile() {
       {/* ------------------ SECOND PROFILE LAYOUT (wrapped to avoid JSX errors) ------------------ */}
       <section className="space-y-6 p-4">
         <header className="flex items-center gap-6">
-          <div className="h-20 w-20 rounded-full bg-gray-300" />
+          <img
+            src={profilePicUrl}
+            alt={`${currentUser.username}'s avatar`}
+            className="h-20 w-20 rounded-full object-cover"
+            loading="lazy"
+          />
 
           <div className="flex flex-col gap-2">
             <h1 className="text-2xl font-bold">{currentUser.username}</h1>
