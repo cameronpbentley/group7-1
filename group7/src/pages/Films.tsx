@@ -107,7 +107,7 @@ export default function Films() {
   return (
     <div className="min-h-screen pt-28">
       {/* HERO */}
-      <header className="flex flex-col items-center justify-center px-6 pt-32 pb-48 text-center">
+      <header className="flex flex-col items-center justify-center px-6 pt-16 pb-32 text-center">
         <h1 className="mb-6 text-6xl font-black tracking-tight text-gray-900 md:text-7xl lg:text-8xl">
           Discover Films
         </h1>
