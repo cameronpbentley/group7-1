@@ -8,7 +8,9 @@ export default function Home() {
       {/* Hero Section */}
       <header className="home-header">
         <div className="hero-content">
-          <h1 className="hero-title">Welcome Back, Cinephile</h1>
+          <h1 className="hero-title" style={{ color: '#000' }}>
+  Welcome Back, Cinephile
+</h1>
           <p className="hero-subtitle">
             Discover, log, and share your film journey with friends
           </p>
