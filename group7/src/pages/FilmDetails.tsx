@@ -11,6 +11,7 @@ interface Film {
   year: number;
   director: string;
   genre: string;
+  poster?: string;
 }
 
 export default function FilmDetails() {
@@ -33,32 +34,12 @@ export default function FilmDetails() {
     );
   }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  // Real film-themed Unsplash images
-  const getPosterUrl = (film: Film) => {
-    switch (film.title) {
-      case "Inception":
-        return "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop&crop=center";
-      case "The Godfather":
-        return "https://images.unsplash.com/photo-1571133918265-65e89a5b0e3f?w=400&h=600&fit=crop&crop=center";
-      case "Pulp Fiction":
-        return "https://images.unsplash.com/photo-1489599501215-4b4ca2e8f83d?w=400&h=600&fit=crop&crop=center";
-      default:
-        return "https://images.unsplash.com/photo-1489599501215-4b4ca2e8f83d?w=400&h=600&fit=crop&crop=center";
-=======
-=======
->>>>>>> Stashed changes
   const getImageUrl = (filename: string | undefined) => {
     if (!filename) return "https://via.placeholder.com/500x750?text=No+Image";
     try {
       return new URL(`../assets/${filename}`, import.meta.url).href;
     } catch {
       return "https://via.placeholder.com/500x750?text=No+Image";
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     }
   };
 
@@ -111,41 +92,6 @@ export default function FilmDetails() {
         </Link>
       </div>
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      {/* Hero Section - Full Bleed with Container */}
-      <header className="from-primary-color/10 to-white-color relative flex min-h-[70vh] items-center overflow-hidden bg-linear-to-br">
-        <div className="absolute inset-0">
-          <img
-            src={getPosterUrl(film)}
-            alt={`${film.title} background`}
-            className="h-full w-full object-cover opacity-20"
-          />
-        </div>
-        <div className="content-container relative z-10 flex flex-col items-start gap-8 py-16 lg:flex-row lg:items-center">
-          {/* Poster - Prominent */}
-          <img
-            src={getPosterUrl(film)}
-            alt={film.title}
-            className="film-poster border-gray/20 h-[500px] w-full max-w-sm shrink-0 rounded-2xl border object-cover shadow-2xl"
-          />
-          {/* Details - Clean & Spaced */}
-          <div className="flex-1 space-y-6">
-            <h1 className="hero-title text-5xl font-bold text-shadow-sm lg:text-6xl">
-              {film.title}
-            </h1>
-            <div className="text-gray flex flex-wrap items-center gap-6 text-lg">
-              <span className="bg-white-color/80 rounded-full px-4 py-2 shadow-sm">
-                {film.year}
-              </span>
-              <span className="bg-white-color/80 rounded-full px-4 py-2 shadow-sm">
-                {film.genre}
-              </span>
-              <p className="font-medium">
-                Directed by{" "}
-                <span className="text-black-color">{film.director}</span>
-              </p>
-=======
       {/* HERO SECTION */}
       <header
         className="FilmDetailsHero"
@@ -159,21 +105,6 @@ export default function FilmDetails() {
           <img src={poster} className="HeroBgImg" />
           <div className="HeroOverlay" />
         </div>
-=======
-      {/* HERO SECTION */}
-      <header
-        className="FilmDetailsHero"
-        style={{
-          background: dominantColor
-            ? `linear-gradient(to bottom, rgba(0,0,0,0.8), ${dominantColor}88)`
-            : undefined,
-        }}
-      >
-        <div className="HeroBg">
-          <img src={poster} className="HeroBgImg" />
-          <div className="HeroOverlay" />
-        </div>
->>>>>>> Stashed changes
 
         <div className="HeroContent">
           <img src={poster} className="HeroPoster" />
@@ -185,10 +116,7 @@ export default function FilmDetails() {
               <span>{film.year}</span>
               <span>{film.genre}</span>
               <span>Directed by <strong>{film.director}</strong></span>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
             </div>
 
             <p className="HeroDescription">
@@ -208,15 +136,7 @@ export default function FilmDetails() {
                     : undefined,
                 }}
               >
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                Log This Film
-=======
                 ★ Rate / Review
->>>>>>> Stashed changes
-=======
-                ★ Rate / Review
->>>>>>> Stashed changes
               </button>
               <button className="BtnOutline">
                 + Add to Watchlist
