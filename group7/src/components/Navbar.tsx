@@ -35,7 +35,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile menu icon */}
+        {/* Mobile menu icons */}
         <div className="navbar-mobile">Menu</div>
       </div>
     </nav>
