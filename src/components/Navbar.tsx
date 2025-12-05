@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="navbar-container">
         {/* Logo - left with padding */}
         <NavLink to="/" className="navbar-logo">
-          MovieApp
+          Letterboxd
         </NavLink>
 
         {/* Menu - perfectly centered */}
